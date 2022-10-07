@@ -1,0 +1,19 @@
+@startuml
+    skinparam TabSize 4
+    skinparam DefaultFontName Courier
+    skinparam ClassAttributeIconSize 0
+
+    class Point
+    {
+        # Point(const float x, const float y);
+
+        + {static} Point NewCartesian(float x, float y);
+        + {static} Point NewPolar(float r, float theta);
+
+        + float GetX() const;
+        + float GetY() const;
+
+        - float m_x;
+        - float m_y;
+    }
+@enduml
