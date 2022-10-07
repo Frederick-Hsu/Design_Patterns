@@ -1,7 +1,5 @@
 TEMPLATE = subdirs
 
 SUBDIRS += \
-    Adapter \
-    Bridge \
-    Creational_Patterns \
-    Factory_Method
+    Creational_Patterns/Builder \
+    Creational_Patterns/Factories
