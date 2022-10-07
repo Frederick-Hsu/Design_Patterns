@@ -1,0 +1,21 @@
+@startuml
+    skinparam TabSize 4
+    skinparam DefaultFontName Courier
+    skinparam ClassAttributeIconSize 0
+
+    class DrinkWithVolumeFactory
+    {
+        - using DrinkName = std::string;
+
+        - using HotDrinkPointer = std::unique_ptr<HotDrink>;
+
+        - using HotDrinkFactory = std::function<HotDrinkPointer>();
+
+        - std::map<DrinkName, HotDrinkFactory>     factories;
+
+
+        + DrinkWithVolumeFactory();
+
+        + std::unique_ptr<HotDrink> make_drink(const std::string& name);
+    }
+@enduml

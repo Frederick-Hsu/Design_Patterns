@@ -1,0 +1,34 @@
+@startuml
+    skinparam TabSize 4
+    skinparam DefaultFontName Courier
+    skinparam ClassAttributeIconSize 0
+
+    class Tag
+    {
+        + std::string   name;
+        + std::string   text;
+
+        + std::vector<Tag>      children;
+        + std::vector<std::pair<std::string, std::string>>  attributes;
+
+        {friend} + std::stream& operator<<(std::ostream& os, const Tag& tag);
+
+        # Tag(const std::string& name, const std::string& text);
+        # Tag(const std::string& name, const std::vector<Tag>& children);
+
+        + std::string stringify();
+    }
+
+    class Paragraph
+    {
+        + Paragraph(const std::string& text);
+        + Paragraph(std::initializer_list<Tag> children);
+    }
+    Tag <|-- Paragraph
+
+    class Img
+    {
+        + Img(const std::string& url);
+    }
+    Tag <|-- Img
+@enduml
