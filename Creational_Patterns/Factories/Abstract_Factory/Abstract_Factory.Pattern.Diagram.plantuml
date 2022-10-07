@@ -1,0 +1,61 @@
+@startuml
+    skinparam TabSize 4
+    skinparam DefaultFontName Courier
+    skinparam ClassAttributeIconSize 0
+
+    interface HotDrink
+    {
+        + virtual void prepare(int volumn) = 0;
+
+        + virtual void drink() = 0;
+    }
+
+    class Tea
+    {
+        + void prepare(int volume) override;
+
+        + void drink() override;
+
+        + std::string tea_category();
+    }
+    HotDrink <|-- Tea
+
+    class Coffee
+    {
+        + void prepare(int volume) override;
+
+        + void drink() override;
+
+        + std::string coffee_brand();
+    }
+    HotDrink <|-- Coffee
+
+    interface HotDrinkFactory
+    {
+        + virtual std::unique_ptr<HotDrink> make() const = 0;
+    }
+
+    class TeaFactory
+    {
+        + std::unique_ptr<HotDrink> make() const override;
+    }
+    HotDrinkFactory <|-- TeaFactory
+
+    class CoffeeFactory
+    {
+        + std::unique_ptr<HotDrink> make() const override;
+    }
+    HotDrinkFactory <|-- CoffeeFactory
+
+    class DrinkFactory
+    {
+        - using DrinkType               = std::string;
+        - using PointerToDrinkFactory   = std::unique_ptr<HotDrinkFactory>;
+
+        - std::map<DrinkType, PointerToDrinkFactory>    hot_factories;
+
+        + DrinkFactory()
+
+        + std::unique_ptr<HotDrink> make_drink(const std::string& name);
+    }
+@enduml
