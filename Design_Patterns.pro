@@ -1,5 +1,6 @@
 TEMPLATE = subdirs
 
 SUBDIRS += \
-    Creational_Patterns/Builder \
-    Creational_Patterns/Factories
+    Behavioural_Patterns \
+    Creational_Patterns \
+    Structural_Patterns
