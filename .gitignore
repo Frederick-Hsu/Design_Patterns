@@ -21,3 +21,4 @@
 build-*/
 
 **/build/*
+**/Adapter_old/
