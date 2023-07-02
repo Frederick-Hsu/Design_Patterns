@@ -1,10 +1,11 @@
 TEMPLATE = app
-CONFIG += console c++11
-CONFIG -= app_bundle
-CONFIG -= qt
+CONFIG += console c++2a
+CONFIG -= app_bundle qt
+
 LIBS += -lgtest -lpthread
 
-HEADERS +=
+HEADERS += 
 
-SOURCES += \
+
+SOURCES +=  \
     main.cpp

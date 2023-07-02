@@ -4,7 +4,7 @@
 #
 
 
-PROJECT = Adapter
+PROJECT = verify_gtest
 
 CXX = g++
 CXXFLAGS = -g -Wall -std=c++2a
