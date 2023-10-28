@@ -4,8 +4,14 @@ CONFIG -= app_bundle qt
 
 LIBS += -lgtest -lpthread
 
-HEADERS += 
+HEADERS +=  \
+    adapter.hpp \
+    drawing.hpp \
+    geometry.hpp
 
 
 SOURCES +=  \
+    adapter.cpp \
+    drawing.cpp \
+    geometry.cpp \
     main.cpp

@@ -1,16 +1,16 @@
 TEMPLATE = app
 CONFIG += -std=c+=11
+LIBS += -lgtest -lpthread
 
 HEADERS += \
-    Abstration.hpp \
-    ConcreteImplementation.hpp \
-    ExtendedAbstraction.hpp \
-    Implementation.hpp
+    person.hpp \
+    renderer.hpp \
+    shape.hpp
 
 SOURCES += \
-    Abstration.cpp \
-    ConcreteImplementation.cpp \
-    ExtendedAbstraction.cpp \
-    Implementation.cpp \
-    main.cpp
+    bridge_main.cpp \
+    person.cpp \
+    renderer.cpp \
+    shape.cpp \
+    test_bridge_pattern.c++
 
