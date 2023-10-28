@@ -1,0 +1,10 @@
+@startuml
+    skinparam TabSize 4
+    skinparam DefaultFontName Courier
+    skinparam ClassAttributeIconSize 0
+
+    interface Renderer
+    {
+        + void render_circle(float x, float y, float radius);
+    }
+@enduml
